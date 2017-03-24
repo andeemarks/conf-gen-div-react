@@ -1,12 +1,4 @@
-
-
-import React, { PropTypes } from 'react';
-import Layout from '../../components/Layout';
-import s from './styles.css';
-import { title, html } from './index.md';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
-var confs = [
+[
   {
     "name":"Code Mania",
     "location":"Auckland, New Zealand",
@@ -412,46 +404,4 @@ var confs = [
     "source":"http://2016.jsconfau.com/",
     "Notes":""
   }
-];
-
-function nameFormatter(cell, row) {
-  return `<a href='#' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell}`;
-}
-
-class HomePage extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.options = {
-      defaultSortName: 'year',
-      defaultSortOrder: 'desc',
-      sortIndicator: true
-    };
-  }
-
-  static propTypes = {
-    articles: PropTypes.array.isRequired,
-  };
-
-  componentDidMount() {
-    document.title = title;
-  }
-
-  render() {
-    return (
-      <Layout className={s.content}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <BootstrapTable data={confs} striped hover>
-          <TableHeaderColumn isKey dataField='name' dataFormat={ nameFormatter } dataSort={ true }>who</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true }>#f</TableHeaderColumn>
-          <TableHeaderColumn dataField='year' dataSort={ true }>when</TableHeaderColumn>
-          <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
-        </BootstrapTable>
-      </Layout>
-    );
-  }
-
-}
-
-export default HomePage;
+]

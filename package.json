@@ -12,6 +12,7 @@
     "fastclick": "^1.0.6",
     "history": "^3.0.0",
     "react": "^15.2.1",
+    "react-bootstrap-table": "^3.1.1",
     "react-dom": "^15.2.1",
     "react-mdl": "^1.6.1",
     "react-redux": "^4.4.5",
@@ -86,6 +87,9 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

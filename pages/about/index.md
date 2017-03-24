@@ -1,68 +1,13 @@
 ---
-title: About Us
+title: About This Site
 ---
 
-## Cadme comitum fecere
+As a generalist software geek in Australia/NZ, there is not a lot of choice when it comes to conferences. One advantage of the limited menu we have is that it’s relatively easy to track trends of the available conferences over time and one such trend I’m particularly interested in is how many female speakers get an opportunity to present at these conferences.
 
-Lorem markdownum velis auras figuram spes solebat spectabat, cum alium,
-plenissima aratri visae herbarum in corpore silvas consumpta. Subito virgae nec
-paratae flexit et niveae repperit erat paratu cum albis steterat conclamat hic!
+## Disclaimer
 
-Nocte suae ligat! *Si* nitidum pervia, illa tua, ab minimo pasci dabitur? In
-fictus concurreret pennis, illis cum accipe rogavi in et nostro cum lacertis
-hostibus ab saxo ne. Genibusque vixque; sine videt terribili lucos ipsum vobis
-resque, et suum pietatis fulvis, est velle. Semele oscula ferat frigidus mactata
-montes, es me parari, piae.
+Gender presence is only one form of diversity to consider and the approach I’ve used is unscientific and assuming a gender binary world, but I hope you find this information useful even with the shortcomings in my method.
 
-## Inflataque ait leves frigida
+## Full Disclosure
 
-Letum per ipsa nostro animae, mari illuc in levi corpus aestibus excussam
-deflentem sic cuius. Venere dedit illa cui in quo senecta artus bella inficit,
-Achaica. Videbatur crinem resonantia alto dea umida dicitur igne; meus signa
-habet; est. Cognovit coepta: similes fugis: habuissem votivi liquida: ictus visi
-nostra me Adoni.
-
-## Laedar cum margine quoque
-
-Quam dato ullis, acer venturi volantes! Tuam non non cursu acta hic, novem
-nutrit, in sidera viscera iam fontes tempora, omnes. Saturnius artus inquit,
-conatoque erectos lenius, carinae, ora est infamia elige per Medusaei induitur.
-Quem quem ab postquam tunc frondescere nodis capiam labique. Voluere luce
-Semeles.
-
-```
-    if (delete(digital, hibernateSoft, dynamicExcelVpn) > io_secondary_led /
-            84) {
-        disk = load;
-        orientationPci.matrix_laptop(modelSsdTweet);
-    } else {
-        kdeEmoticonLed.mebibyte_algorithm_domain(2,
-                hackerCtr.rom_iso_desktop.scarewarePrimaryBankruptcy(station,
-                disk_mask_matrix, restore_crt));
-        cameraSpyware(4, multitasking(-3, log_dfs_controller));
-        menuCisc.swappable -= w(mount_vle_unicode, 5);
-    }
-    var optic_spider = newbieFunctionThick(-3, esportsKbpsUnix);
-    var dvd_ctp_resolution = dithering;
-```
-
-## Usus fixurus illi petunt
-
-Domosque tune amas mihi adhuc et *alter per* suasque versavitque iners
-crescentemque nomen verba nunc. Acervos hinc natus si habet. Et cervix imago
-quod! Arduus dolet!
-
-```
-    cpcDdrCommand.window(moodleAlpha, im, server_alpha.doubleVrmlMonochrome(
-            iosBar - -2, white_dual, ad(2, 94, 83)));
-    mbps_typeface_publishing.bit.host_flash_capacity(click(90,
-            cyberspace_srgb_pup - mpeg, marketing_trackback +
-            table_plagiarism_domain));
-    syn_e = powerExtension * defragmentNntpOsd(alertOutputNode(pop,
-            pageResponsiveDrive));
-    method -= switch_newsgroup_flaming;
-```
-
-Aliquid mansura arida altismunera **in illi**. Dignus vir pontum *crimen
-versabat* carpunt omnes rotis Canentem erant in Oebalio, et manu senecta
-iungere. Prima diurnis!
+My employer, ThoughtWorks, sponsors both Agile Australia and the YOW conferences and I’ve spoken at several of these events over the years.
