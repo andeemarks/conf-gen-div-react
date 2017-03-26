@@ -455,25 +455,46 @@ class HomePage extends React.Component {
       defaultSortOrder: 'desc',
       sortIndicator: true
     };
+
+    this.state = {
+      confs:[]
+    };
   }
 
   static propTypes = {
     articles: PropTypes.array.isRequired,
   };
 
-  componentDidMount() {
-    document.title = title;
+  loadConfData() {
+    // $.ajax({
+    //   url: './confs.json',
+    //   dataType: 'json',
+    //   success: function(confs) {
+    //     this.setState({confs: confs});
+    //   }.bind(this)
+    // });
+  }
+
+  augmentConfData(confs) {
     for (var i = 0; i < confs.length; i += 1) {
       confs[i]['numberOfMen'] = confs[i].totalSpeakers - confs[i].numberOfWomen;
       confs[i]['diversityPercentage'] = confs[i].numberOfWomen / confs[i].totalSpeakers * 100
     }
+
+    return confs;
+  }
+
+  componentDidMount() {
+    document.title = title;
+    this.loadConfData();
+    this.setState({confs: this.augmentConfData(confs)});
   }
 
   render() {
     return (
       <Layout className={s.content}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        <BootstrapTable data={confs} condensed bordered={ false }>
+        <BootstrapTable data={this.state.confs} condensed bordered={ false }>
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
