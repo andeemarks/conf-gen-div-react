@@ -415,7 +415,7 @@ var confs = [
 ];
 
 function whoFormatter(cell, row) {
-  return `<a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell}`;
+  return `<a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell} (${row.year})`;
 }
 
 function numberOfMenFormatter(cell, row) {
