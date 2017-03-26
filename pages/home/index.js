@@ -414,8 +414,12 @@ var confs = [
   }
 ];
 
-function nameFormatter(cell, row) {
-  return `<a href='#' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell}`;
+function whoFormatter(cell, row) {
+  return `<a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell}`;
+}
+
+function numberOfMenFormatter(cell, row) {
+  return row.totalSpeakers - row.numberOfWomen;
 }
 
 class HomePage extends React.Component {
@@ -442,9 +446,10 @@ class HomePage extends React.Component {
     return (
       <Layout className={s.content}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        <BootstrapTable data={confs} striped hover>
-          <TableHeaderColumn isKey dataField='name' dataFormat={ nameFormatter } dataSort={ true }>who</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true }>#f</TableHeaderColumn>
+        <BootstrapTable data={confs} condensed bordered={ false }>
+          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfMen' dataFormat={ numberOfMenFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
