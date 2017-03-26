@@ -422,6 +422,10 @@ function numberOfMenFormatter(cell, row) {
   return row.totalSpeakers - row.numberOfWomen;
 }
 
+function genderDiversityFormatter(cell, row) {
+  return row.numberOfWomen / row.totalSpeakers;
+}
+
 class HomePage extends React.Component {
 
   constructor(props) {
@@ -450,6 +454,7 @@ class HomePage extends React.Component {
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataFormat={ numberOfMenFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='genderDiversity' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#f:#m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
