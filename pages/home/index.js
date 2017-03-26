@@ -423,7 +423,26 @@ function numberOfMenFormatter(cell, row) {
 }
 
 function genderDiversityFormatter(cell, row) {
-  return row.numberOfWomen / row.totalSpeakers;
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'decimal',
+    minimumIntegerDigits: 1,
+    maximumIntegerDigits: 2,
+    maximumFractionDigits: 0,
+  });
+
+  return `${formatter.format((row.numberOfWomen / row.totalSpeakers) * 100)}'%`;
+}
+
+function yearFormatter(cell, row) {
+    var thisYear = new Date().getFullYear();
+    var yearDiff = thisYear - cell;
+    if (yearDiff == 0) {
+      return "this year";
+    } else if (yearDiff == 1) {
+      return "last year";
+    } else {
+      return yearDiff + " years ago";
+    }
 }
 
 class HomePage extends React.Component {
@@ -454,8 +473,8 @@ class HomePage extends React.Component {
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataFormat={ numberOfMenFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='genderDiversity' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#f:#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='year' dataSort={ true }>when</TableHeaderColumn>
+          <TableHeaderColumn dataField='genderDiversity' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' dataAlign='center'>#f:#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
       </Layout>
