@@ -430,7 +430,7 @@ function genderDiversityFormatter(cell, row) {
     maximumFractionDigits: 0,
   });
 
-  return `${formatter.format((row.numberOfWomen / row.totalSpeakers) * 100)}'%`;
+  return `${formatter.format(cell)}'%`;
 }
 
 function yearFormatter(cell, row) {
@@ -463,6 +463,10 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     document.title = title;
+    for (var i = 0; i < confs.length; i += 1) {
+      confs[i]['numberOfMen'] = confs[i].totalSpeakers - confs[i].numberOfWomen;
+      confs[i]['diversityPercentage'] = confs[i].numberOfWomen / confs[i].totalSpeakers * 100
+    }
   }
 
   render() {
@@ -472,8 +476,8 @@ class HomePage extends React.Component {
         <BootstrapTable data={confs} condensed bordered={ false }>
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfMen' dataFormat={ numberOfMenFormatter } dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='genderDiversity' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' dataAlign='center'>#f:#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='diversityPercentage' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' dataAlign='center'>#f:#m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
