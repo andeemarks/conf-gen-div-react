@@ -95,10 +95,10 @@ class HomePage extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs} condensed bordered={ false }>
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='300'>who</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle }  dataAlign='center' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center'>f:m</TableHeaderColumn>
-          <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true }>when</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle }  dataAlign='center' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' width='80'>f:m</TableHeaderColumn>
+          <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true } width='120'>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
       </Layout>
