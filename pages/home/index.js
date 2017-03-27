@@ -15,6 +15,9 @@ function numberOfMenFormatter(cell, row) {
   return row.totalSpeakers - row.numberOfWomen;
 }
 
+function genderDiversityFormatter2(cell, row) {
+  return `<div class='${genderDiversityStyle(cell)}'>${genderDiversityFormatter(cell)}</div>`;
+}
 function genderDiversityFormatter(cell, row) {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'decimal',
@@ -28,17 +31,17 @@ function genderDiversityFormatter(cell, row) {
 
 function genderDiversityStyle(percentage, row, rowIndex, columnIndex) {
     if (percentage < 10) {
-      return "percentage-cohort-f";
+      return "percentage-colour-block percentage-cohort-f";
     } else if (percentage < 20) {
-      return "percentage-cohort-e";
+      return "percentage-colour-block percentage-cohort-e";
     } else if (percentage < 30) {
-      return "percentage-cohort-d";
+      return "percentage-colour-block percentage-cohort-d";
     } else if (percentage < 40) {
-      return "percentage-cohort-c";
+      return "percentage-colour-block percentage-cohort-c";
     } else if (percentage < 50) {
-      return "percentage-cohort-b";
+      return "percentage-colour-block percentage-cohort-b";
     } else {
-      return "percentage-cohort-a";
+      return "percentage-colour-block percentage-cohort-a";
     }
 
 }
@@ -94,10 +97,10 @@ class HomePage extends React.Component {
       <Layout className={s.content}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs} condensed bordered={ false }>
-          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='300'>who</TableHeaderColumn>
+          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='250'>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle }  dataAlign='center' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' width='80'>f:m</TableHeaderColumn>
+          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle }  dataAlign='center' dataFormat={ genderDiversityFormatter2 } dataSort={ true } headerAlign='center' width='80'>f:m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true } width='120'>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
