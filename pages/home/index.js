@@ -94,10 +94,10 @@ class HomePage extends React.Component {
       <Layout className={s.content}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs} condensed bordered={ false }>
-          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
+          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='300'>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle } dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center'>#f:#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle }  dataAlign='center' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center'>f:m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
