@@ -5,3 +5,10 @@
   max-width: 1000px;
   width: 100%;
 }
+
+body {
+  padding-top: 20px;
+  background-image: url("/public/img/conf-audience.png");
+  color: #ddd;
+  background: #000;
+}

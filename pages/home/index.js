@@ -23,7 +23,24 @@ function genderDiversityFormatter(cell, row) {
     maximumFractionDigits: 0,
   });
 
-  return `${formatter.format(cell)}'%`;
+  return `${formatter.format(cell)}%`;
+}
+
+function genderDiversityStyle(percentage, row, rowIndex, columnIndex) {
+    if (percentage < 10) {
+      return "percentage-cohort-f";
+    } else if (percentage < 20) {
+      return "percentage-cohort-e";
+    } else if (percentage < 30) {
+      return "percentage-cohort-d";
+    } else if (percentage < 40) {
+      return "percentage-cohort-c";
+    } else if (percentage < 50) {
+      return "percentage-cohort-b";
+    } else {
+      return "percentage-cohort-a";
+    }
+
 }
 
 function yearFormatter(cell, row) {
@@ -80,7 +97,7 @@ class HomePage extends React.Component {
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true }>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='diversityPercentage' dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center' dataAlign='center'>#f:#m</TableHeaderColumn>
+          <TableHeaderColumn dataField='diversityPercentage' columnClassName={ genderDiversityStyle } dataFormat={ genderDiversityFormatter } dataSort={ true } headerAlign='center'>#f:#m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true }>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
