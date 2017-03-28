@@ -11,7 +11,6 @@ const webpack = require('webpack');
 const config = {
   title: 'Female Speakers at Tech Conferences',        // Your website title
   url: 'https://xxtechconfspeakers.herokuapp.com',          // Your website URL
-  project: 'react-static-boilerplate',      // Firebase project. See README.md -> How to Deploy
   trackingID: 'UA-XXXXX-Y',                 // Google Analytics Site's ID
 };
 
