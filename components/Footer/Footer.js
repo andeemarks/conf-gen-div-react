@@ -2,10 +2,14 @@
 
 import React from 'react';
 import Link from '../Link';
+import { html } from './index.md';
 
 function Footer() {
   return (
     <footer className="mdl-mini-footer">
+      <div className="mdl-mini-footer__left-section">
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
       <div className="mdl-mini-footer__right-section">
         <ul className="mdl-mini-footer__link-list">
           <li className="mdl-mini-footer--social-btn" style={{ backgroundColor: 'transparent' }}>
