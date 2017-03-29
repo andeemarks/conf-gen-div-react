@@ -25,7 +25,7 @@
     color: white;
   }
 
-  .percentage-colour-block {
+  .percentageColourBlock {
     float: left;
     width: 50px;
     text-align: center;
@@ -61,7 +61,7 @@
     color: black;
   }
 
-  .description {
+  .descriptionText {
     padding-left: 20px;
     padding-right: 10px;
     font-size: smaller;
