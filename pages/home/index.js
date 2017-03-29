@@ -8,7 +8,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import confs from './confs.json';
 
 function whoFormatter(cell, row) {
-  return `<a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a> ${cell} (${row.year})`;
+  return `${cell} (${row.year}) <a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a>`;
 }
 
 function numberOfMenFormatter(cell, row) {
@@ -95,12 +95,11 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs}
           condensed bordered={ false }
-          tableBodyClass={s.confTable}
-          tableStyle={ { border: "none" }} >
-          <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='250'>who</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
+          // tableClassName={s.confTable}
+          tableStyle={ { border: "none" }}
+          >
           <TableHeaderColumn
+            isKey
             dataField='diversityPercentage'
             columnClassName={ genderDiversityStyle }
             dataAlign='center'
@@ -109,6 +108,9 @@ class HomePage extends React.Component {
             headerAlign='center'
             width='50'
             >f:m</TableHeaderColumn>
+          <TableHeaderColumn dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='200'>who</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
+          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true } width='120'>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
