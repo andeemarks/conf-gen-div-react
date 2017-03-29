@@ -15,9 +15,6 @@ function numberOfMenFormatter(cell, row) {
   return row.totalSpeakers - row.numberOfWomen;
 }
 
-function genderDiversityFormatter2(cell, row) {
-  return `<div class='${genderDiversityStyle(cell)}'>${genderDiversityFormatter(cell)}</div>`;
-}
 function genderDiversityFormatter(cell, row) {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'decimal',
@@ -31,17 +28,17 @@ function genderDiversityFormatter(cell, row) {
 
 function genderDiversityStyle(percentage, row, rowIndex, columnIndex) {
     if (percentage < 10) {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortF}`;
     } else if (percentage < 20) {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortE}`;
     } else if (percentage < 30) {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortD}`;
     } else if (percentage < 40) {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortC}`;
     } else if (percentage < 50) {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortB}`;
     } else {
-      return '{s.percentageColourBlock}';
+      return `${s.percentageColourBlock} ${s.percentageCohortA}`;
     }
 
 }
@@ -105,8 +102,8 @@ class HomePage extends React.Component {
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
           <TableHeaderColumn
             dataField='diversityPercentage'
-            // columnClassName={ genderDiversityStyle }
-            columnClassName={s.percentageColourBlock}
+            columnClassName={ genderDiversityStyle }
+            // columnClassName={s.percentageColourBlock}
             dataAlign='center'
             dataFormat={ genderDiversityFormatter }
             dataSort={ true }
