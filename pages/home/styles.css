@@ -21,13 +21,11 @@
     color: #fff;
   }
 
-  .row {
-    color: white;
+  .table {
+    border: none;
   }
 
   .percentageColourBlock {
-    float: left;
-    width: 50px;
     text-align: center;
     color: white;
     border-top: none;

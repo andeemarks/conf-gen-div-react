@@ -95,20 +95,20 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs}
           condensed bordered={ false }
-          tableStyle={ { border: 'none' } }
-          >
+          tableBodyClass={s.confTable}
+          tableStyle={ { border: "none" }} >
           <TableHeaderColumn isKey dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='250'>who</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
           <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
           <TableHeaderColumn
             dataField='diversityPercentage'
             columnClassName={ genderDiversityStyle }
-            // columnClassName={s.percentageColourBlock}
             dataAlign='center'
             dataFormat={ genderDiversityFormatter }
             dataSort={ true }
             headerAlign='center'
-            width='80'>f:m</TableHeaderColumn>
+            width='50'
+            >f:m</TableHeaderColumn>
           <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true } width='120'>when</TableHeaderColumn>
           <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
         </BootstrapTable>
