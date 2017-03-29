@@ -95,15 +95,15 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs}
           condensed bordered={ false }
-          // tableClassName={s.confTable}
           tableStyle={ { border: "none" }}
           >
           <TableHeaderColumn
             isKey
+            tdAttr={ { 'id': 'confTableRow' } }
             dataField='diversityPercentage'
             columnClassName={ genderDiversityStyle }
-            dataAlign='center'
             dataFormat={ genderDiversityFormatter }
+            dataAlign='center'
             dataSort={ true }
             headerAlign='center'
             width='50'
