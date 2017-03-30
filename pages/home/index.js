@@ -104,14 +104,16 @@ class HomePage extends React.Component {
   componentDidMount() {
     document.title = title;
     this.setState({confs: this.augmentConfData(confs)});
-    // this.refs.table.handleSort('desc', 'diversityPercentage');
+    this.refs.table.handleSort('desc', 'diversityPercentage');
   }
 
   render() {
     return (
       <Layout className={s.content}>
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
-        <BootstrapTable data={this.state.confs}
+        <BootstrapTable
+          data={this.state.confs}
+          ref="table"
           condensed bordered={ false }
           trClassName={ genderDiversityRowStyle }
           tableStyle={ { border: "none" }}
