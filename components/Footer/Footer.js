@@ -6,7 +6,7 @@ import { html } from './index.md';
 
 function Footer() {
   return (
-    <footer className="mdl-mini-footer">
+    <footer className="mdl-mini-footer" style={{ backgroundColor: '#000000' }}>
       <div className="mdl-mini-footer__left-section">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
