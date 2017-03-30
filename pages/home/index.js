@@ -132,7 +132,7 @@ class HomePage extends React.Component {
             tdAttr={ { 'id': `${s.confTableRow}` } }
             dataFormat={ whoFormatter }
             dataSort={ true }
-            width='200'
+            width='250'
             >who</TableHeaderColumn>
           <TableHeaderColumn
             dataField='numberOfWomen'
@@ -140,7 +140,7 @@ class HomePage extends React.Component {
             dataSort={ true }
             headerAlign='right'
             dataAlign='right'
-            width='80'
+            width='50'
             >#f</TableHeaderColumn>
           <TableHeaderColumn
             dataField='numberOfMen'
@@ -148,7 +148,7 @@ class HomePage extends React.Component {
             dataSort={ true }
             headerAlign='right'
             dataAlign='right'
-            width='80'
+            width='50'
             >#m</TableHeaderColumn>
           <TableHeaderColumn
             dataField='year'
