@@ -28,17 +28,17 @@ function genderDiversityFormatter(cell, row) {
 
 function genderDiversityStyle(percentage, row, rowIndex, columnIndex) {
     if (percentage < 10) {
-      return `${s.percentageColourBlock} ${s.percentageCohortF}`;
+      return `${s.percentageCohortF}`;
     } else if (percentage < 20) {
-      return `${s.percentageColourBlock} ${s.percentageCohortE}`;
+      return `${s.percentageCohortE}`;
     } else if (percentage < 30) {
-      return `${s.percentageColourBlock} ${s.percentageCohortD}`;
+      return `${s.percentageCohortD}`;
     } else if (percentage < 40) {
-      return `${s.percentageColourBlock} ${s.percentageCohortC}`;
+      return `${s.percentageCohortC}`;
     } else if (percentage < 50) {
-      return `${s.percentageColourBlock} ${s.percentageCohortB}`;
+      return `${s.percentageCohortB}`;
     } else {
-      return `${s.percentageColourBlock} ${s.percentageCohortA}`;
+      return `${s.percentageCohortA}`;
     }
 
 }
@@ -99,7 +99,7 @@ class HomePage extends React.Component {
           >
           <TableHeaderColumn
             isKey
-            tdAttr={ { 'id': 'confTableRow' } }
+            tdAttr={ { 'id': `${s.confTableRow}` } }
             dataField='diversityPercentage'
             columnClassName={ genderDiversityStyle }
             dataFormat={ genderDiversityFormatter }
@@ -108,11 +108,40 @@ class HomePage extends React.Component {
             headerAlign='center'
             width='50'
             >f:m</TableHeaderColumn>
-          <TableHeaderColumn dataField='name' dataFormat={ whoFormatter } dataSort={ true } width='200'>who</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfWomen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#f</TableHeaderColumn>
-          <TableHeaderColumn dataField='numberOfMen' dataSort={ true } headerAlign='right' dataAlign='right' width='80'>#m</TableHeaderColumn>
-          <TableHeaderColumn dataField='year' dataFormat={ yearFormatter } dataSort={ true } width='120'>when</TableHeaderColumn>
-          <TableHeaderColumn dataField='location'>where</TableHeaderColumn>
+          <TableHeaderColumn
+            dataField='name'
+            tdAttr={ { 'id': `${s.confTableRow}` } }
+            dataFormat={ whoFormatter }
+            dataSort={ true }
+            width='200'
+            >who</TableHeaderColumn>
+          <TableHeaderColumn
+            dataField='numberOfWomen'
+            tdAttr={ { 'id': `${s.confTableRow}` } }
+            dataSort={ true }
+            headerAlign='right'
+            dataAlign='right'
+            width='80'
+            >#f</TableHeaderColumn>
+          <TableHeaderColumn
+            dataField='numberOfMen'
+            tdAttr={ { 'id': `${s.confTableRow}` } }
+            dataSort={ true }
+            headerAlign='right'
+            dataAlign='right'
+            width='80'
+            >#m</TableHeaderColumn>
+          <TableHeaderColumn
+            dataField='year'
+            tdAttr={ { 'id': `${s.confTableRow}` } }
+            dataFormat={ yearFormatter }
+            dataSort={ true }
+            width='120'
+            >when</TableHeaderColumn>
+          <TableHeaderColumn
+            dataField='location'
+            tdAttr={ { 'id': `${s.confTableRow}` } }
+            >where</TableHeaderColumn>
         </BootstrapTable>
       </Layout>
     );

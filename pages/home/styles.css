@@ -22,13 +22,10 @@
   }
 
   #confTableRow {
-    padding: 4px;
-    border: none;
-  }
-
-  .percentageColourBlock {
-    text-align: center;
-    color: white;
+    padding-top: 2px;
+    padding-left: 6px;
+    border-top: 4px solid #000;
+    line-height: 95%
   }
 
   .percentageCohortA {
@@ -38,10 +35,12 @@
 
   .percentageCohortB {
     background-color: green;
+    color: white;
   }
 
   .percentageCohortC {
     background-color: blue;
+    color: white;
   }
 
   .percentageCohortD {
