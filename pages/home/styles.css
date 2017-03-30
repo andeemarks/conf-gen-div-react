@@ -21,6 +21,10 @@
     color: #fff;
   }
 
+  .confTable {
+    padding: 20px;
+  }
+
   #confTableRow {
     padding-top: 2px;
     padding-left: 6px;

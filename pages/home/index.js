@@ -114,6 +114,7 @@ class HomePage extends React.Component {
         <BootstrapTable
           data={this.state.confs}
           ref="table"
+          containerClass={s.confTable}
           condensed bordered={ false }
           trClassName={ genderDiversityRowStyle }
           tableStyle={ { border: "none" }}
