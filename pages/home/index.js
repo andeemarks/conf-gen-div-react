@@ -26,20 +26,37 @@ function genderDiversityFormatter(cell, row) {
   return `${formatter.format(cell)}%`;
 }
 
-function genderDiversityStyle(percentage, row, rowIndex, columnIndex) {
-    if (percentage < 10) {
-      return `${s.percentageCohortF}`;
-    } else if (percentage < 20) {
-      return `${s.percentageCohortE}`;
-    } else if (percentage < 30) {
-      return `${s.percentageCohortD}`;
-    } else if (percentage < 40) {
-      return `${s.percentageCohortC}`;
-    } else if (percentage < 50) {
-      return `${s.percentageCohortB}`;
-    } else {
-      return `${s.percentageCohortA}`;
-    }
+function genderDiversityRowStyle(row, rowIndex) {
+  var percentage = row.diversityPercentage;
+  if (percentage < 10) {
+    return `${s.percentageCohortFTrans}`;
+  } else if (percentage < 20) {
+    return `${s.percentageCohortETrans}`;
+  } else if (percentage < 30) {
+    return `${s.percentageCohortDTrans}`;
+  } else if (percentage < 40) {
+    return `${s.percentageCohortCTrans}`;
+  } else if (percentage < 50) {
+    return `${s.percentageCohortBTrans}`;
+  } else {
+    return `${s.percentageCohortATrans}`;
+  }
+}
+
+function genderDiversityCellStyle(percentage, row, rowIndex, columnIndex) {
+  if (percentage < 10) {
+    return `${s.percentageCohortF}`;
+  } else if (percentage < 20) {
+    return `${s.percentageCohortE}`;
+  } else if (percentage < 30) {
+    return `${s.percentageCohortD}`;
+  } else if (percentage < 40) {
+    return `${s.percentageCohortC}`;
+  } else if (percentage < 50) {
+    return `${s.percentageCohortB}`;
+  } else {
+    return `${s.percentageCohortA}`;
+  }
 
 }
 
@@ -87,6 +104,7 @@ class HomePage extends React.Component {
   componentDidMount() {
     document.title = title;
     this.setState({confs: this.augmentConfData(confs)});
+    // this.refs.table.handleSort('desc', 'diversityPercentage');
   }
 
   render() {
@@ -95,13 +113,14 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <BootstrapTable data={this.state.confs}
           condensed bordered={ false }
+          trClassName={ genderDiversityRowStyle }
           tableStyle={ { border: "none" }}
           >
           <TableHeaderColumn
             isKey
             tdAttr={ { 'id': `${s.confTableRow}` } }
             dataField='diversityPercentage'
-            columnClassName={ genderDiversityStyle }
+            columnClassName={ genderDiversityCellStyle }
             dataFormat={ genderDiversityFormatter }
             dataAlign='center'
             dataSort={ true }
