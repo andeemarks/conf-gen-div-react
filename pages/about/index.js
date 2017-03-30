@@ -14,7 +14,7 @@ class AboutPage extends React.Component {
   render() {
     return (
       <Layout className={s.content}>
-        <h1>{title}</h1>
+        <h5>{title}</h5>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Layout>
     );
