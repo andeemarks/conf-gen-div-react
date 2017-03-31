@@ -16,16 +16,19 @@ class Callouts extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className={s.container}>
         <div className="row">
           <div className="col-sm-4">
-            Biggest recent improver
+            <div id={s.title}>Biggest recent improver</div>
+            <div id={s.body}>FOO</div>
           </div>
           <div className="col-sm-4">
-            Number of confs >= 50%
+            <div id={s.title}>Number of confs >= 50%</div>
+            <div id={s.body}>BAR</div>
           </div>
           <div className="col-sm-4">
-            Best performer
+            <div id={s.title}>Best performer</div>
+            <div id={s.body}>BLECH</div>
           </div>
         </div>
       </div>
