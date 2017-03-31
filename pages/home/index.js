@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Layout   from '../../components/Layout';
 import ConfList from '../../components/ConfList';
+import Callouts from '../../components/Callouts';
 import s from './styles.css';
 import { title, html } from './index.md';
 
@@ -25,6 +26,7 @@ class HomePage extends React.Component {
     return (
       <Layout className={s.content}>
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
+        <Callouts />
         <ConfList />
       </Layout>
     );
