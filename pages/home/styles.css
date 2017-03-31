@@ -1,8 +1,4 @@
-
 @media screen and (max-width: 1024px) {
-
-/* app css stylesheet */
-
   body {
     padding-top: 20px;
     color: #ddd;
@@ -17,6 +13,4 @@
     border-color: #222;
     color: #fff;
   }
-
-
 }
