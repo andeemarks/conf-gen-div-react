@@ -13,6 +13,9 @@
     background-color: white;
     color: black;
     text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
