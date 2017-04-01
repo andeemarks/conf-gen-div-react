@@ -4,15 +4,24 @@
     padding-right: 20px;
   }
 
+  #nbrConfAtParity > #body {
+    font-size: xx-large;
+    line-height: 150%;
+  }
+
   #title {
     background-color: white;
     color: black;
     text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 
   #body {
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
     text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
