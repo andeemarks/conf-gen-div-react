@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import s from './Callouts.css';
+import numbro from 'numbro';
 
 
 function diversityAtParityOrGreater(conf) {
@@ -36,7 +37,7 @@ class Callouts extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <div id={s.title}>Best performer</div>
-            <div id={s.body}><strong>{this.state.bestPerformer.name} ({this.state.bestPerformer.year})</strong><br/>{this.state.bestPerformer.diversityPercentage}%<br/>{this.state.bestPerformer.location}</div>
+            <div id={s.body}><strong>{this.state.bestPerformer.name} ({this.state.bestPerformer.year})</strong><br/>{numbro(this.state.bestPerformer.diversityPercentage).format('0')}%<br/>{this.state.bestPerformer.location}</div>
           </div>
           <div className="col-sm-4">
             <div id={s.title}>Biggest recent improver</div>
