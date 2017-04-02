@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import s from './ConfList.css';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import confs from './confs.json';
 
 function whoFormatter(cell, row) {
   return `${cell} (${row.year}) <a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a>`;
@@ -80,25 +79,11 @@ class ConfList extends React.Component {
     };
 
     this.state = {
-      confs:[]
+      confs: props.confs
     };
   }
 
-  static propTypes = {
-    articles: PropTypes.array.isRequired,
-  };
-
-  augmentConfData(confs) {
-    for (var i = 0; i < confs.length; i += 1) {
-      confs[i]['numberOfMen'] = confs[i].totalSpeakers - confs[i].numberOfWomen;
-      confs[i]['diversityPercentage'] = confs[i].numberOfWomen / confs[i].totalSpeakers * 100
-    }
-
-    return confs;
-  }
-
   componentDidMount() {
-    this.setState({confs: this.augmentConfData(confs)});
     this.refs.table.handleSort('desc', 'diversityPercentage');
   }
 

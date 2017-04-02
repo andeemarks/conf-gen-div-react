@@ -10,10 +10,6 @@ class Callouts extends React.Component {
     };
   }
 
-  static propTypes = {
-    articles: PropTypes.array.isRequired,
-  };
-
   render() {
     return (
       <div className={s.container}>
