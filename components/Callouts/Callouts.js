@@ -6,14 +6,28 @@ function diversityAtParityOrGreater(conf) {
   return conf.diversityPercentage >= 50;
 }
 
+function diversitySorter(confA, confB) {
+  if (confA.diversityPercentage < confB.diversityPercentage) {
+    return 1;
+  }
+  if (confA.diversityPercentage > confB.diversityPercentage) {
+    return -1;
+  }
+
+  return 0;
+}
+
 class Callouts extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      confs: props.confs
+      confs: props.confs,
+      bestPerformer: props.confs.sort(diversitySorter)[0]
     };
+
+    console.log(this.state.bestPerformingConf);
   }
 
   render() {
@@ -22,7 +36,7 @@ class Callouts extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <div id={s.title}>Best performer</div>
-            <div id={s.body}><strong>Code Mania 2016</strong><br/>58%<br/>Auckland, New Zealand</div>
+            <div id={s.body}><strong>{this.state.bestPerformer.name} ({this.state.bestPerformer.year})</strong><br/>{this.state.bestPerformer.diversityPercentage}%<br/>{this.state.bestPerformer.location}</div>
           </div>
           <div className="col-sm-4">
             <div id={s.title}>Biggest recent improver</div>
