@@ -1,6 +1,11 @@
 import React, { PropTypes } from 'react';
 import s from './Callouts.css';
 
+
+function diversityAtParityOrGreater(conf) {
+  return conf.diversityPercentage >= 50;
+}
+
 class Callouts extends React.Component {
 
   constructor(props) {
@@ -25,7 +30,7 @@ class Callouts extends React.Component {
           </div>
           <div className="col-sm-4" id={s.nbrConfAtParity}>
             <div id={s.title}>Number of confs >= 50%</div>
-            <div id={s.body}>6</div>
+            <div id={s.body}>{(this.state.confs.filter(diversityAtParityOrGreater)).length}</div>
           </div>
         </div>
       </div>
