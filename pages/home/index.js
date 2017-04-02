@@ -36,7 +36,7 @@ class HomePage extends React.Component {
     return (
       <Layout className={s.content}>
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
-        <Callouts />
+        <Callouts confs={this.state.confs} />
         <ConfList confs={this.state.confs} />
       </Layout>
     );

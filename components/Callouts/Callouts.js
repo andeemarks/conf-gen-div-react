@@ -7,6 +7,7 @@ class Callouts extends React.Component {
     super(props);
 
     this.state = {
+      confs: props.confs
     };
   }
 
