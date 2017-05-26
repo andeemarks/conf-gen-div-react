@@ -108,6 +108,15 @@
     "Notes":""
   },
   {
+    "name":"Agile Australia",
+    "location":"Sydney, Australia",
+    "year":"2017",
+    "totalSpeakers":69,
+    "numberOfWomen":26,
+    "source":"http://agileaustralia.com.au/2017/speakers/",
+    "Notes":""
+  },
+  {
     "name":"LAST",
     "location":"Melbourne, Australia",
     "year":"2015",
