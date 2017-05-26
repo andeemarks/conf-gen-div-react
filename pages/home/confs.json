@@ -350,6 +350,15 @@
     "source":"https://www.devopsdays.org/events/2016-sydney/speakers/",
     "Notes":"Partly unfonference - possible unscheduled talks by women"
   },
+  {
+    "name":"DevOps Days",
+    "location":"Wellington, New Zealand",
+    "year":"2016",
+    "totalSpeakers":12,
+    "numberOfWomen":2,
+    "source":"https://www.devopsdays.org/events/2016-newzealand/speakers/",
+    "Notes":"Partly unfonference - possible unscheduled talks by women"
+  },
  {
     "name":"RubyConf",
     "location":"Sydney, Australia",
@@ -384,6 +393,15 @@
     "totalSpeakers":28,
     "numberOfWomen":10,
     "source":"http://www.rubyconf.org.au/2017/speakers",
+    "Notes":"Not including lightning talks"
+  },
+  {
+    "name":"ScaleConf",
+    "location":"Wellington, New Zealand",
+    "year":"2017",
+    "totalSpeakers":13,
+    "numberOfWomen":3,
+    "source":"http://www.scaleconf.co.nz/",
     "Notes":"Not including lightning talks"
   },
  {
