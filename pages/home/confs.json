@@ -297,6 +297,15 @@
     "Notes":"Not including lightning talks"
   },
   {
+    "name":"YOW Lambda Jam",
+    "location":"Brisbane, Australia",
+    "year":"2016",
+    "totalSpeakers":24,
+    "numberOfWomen":1,
+    "source":"http://lambdajam.yowconference.com.au/archive-2016/",
+    "Notes":"Not including lightning talks"
+  },
+  {
     "name":"YOW West",
     "location":"Perth, Australia",
     "year":"2014",
