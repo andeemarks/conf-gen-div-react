@@ -128,6 +128,15 @@
   {
     "name":"LAST",
     "location":"Melbourne, Australia",
+    "year":"2017",
+    "totalSpeakers":163,
+    "numberOfWomen":51,
+    "source":"https://confengine.com/last-conference-melbourne-2017/schedule",
+    "Notes":""
+  },
+  {
+    "name":"LAST",
+    "location":"Melbourne, Australia",
     "year":"2016",
     "totalSpeakers":133,
     "numberOfWomen":33,
