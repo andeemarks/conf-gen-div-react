@@ -325,6 +325,15 @@
   },
   {
     "name":"DevOps Days",
+    "location":"Auckland, New Zealand",
+    "year":"2017",
+    "totalSpeakers":10,
+    "numberOfWomen":2,
+    "source":"https://www.devopsdays.org/events/2017-auckland/speakers/",
+    "Notes":"Partly unfonference - possible unscheduled talks by women"
+  },
+  {
+    "name":"DevOps Days",
     "location":"Melbourne, Australia",
     "year":"2013",
     "totalSpeakers":7,
