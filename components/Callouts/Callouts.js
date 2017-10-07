@@ -25,10 +25,9 @@ class Callouts extends React.Component {
 
     this.state = {
       confs: props.confs,
-      bestPerformer: props.confs.sort(diversitySorter)[0]
+      bestPerformer: props.confs.sort(diversitySorter)[0],
+      numberOfConfs: props.confs.length
     };
-
-    console.log(this.state.bestPerformingConf);
   }
 
   render() {
@@ -37,7 +36,7 @@ class Callouts extends React.Component {
         <div className="row">
           <div className="col-sm-3">
             <div className={s.title}>Conferences tracked</div>
-            <div className={s.body}><strong>{this.state.confs.length}</strong></div>
+            <div className={s.body}><strong>{this.state.numberOfConfs}</strong></div>
           </div>
           <div className="col-sm-3">
             <div className={s.title}>Best performer</div>
