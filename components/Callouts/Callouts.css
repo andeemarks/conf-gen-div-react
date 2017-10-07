@@ -9,13 +9,9 @@
   }
 
   .pop {
+    composes: body;
     font-size: xx-large;
     line-height: 200%;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: white;
-    text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
   }
 
   .title {
