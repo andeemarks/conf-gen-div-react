@@ -36,7 +36,7 @@ class Callouts extends React.Component {
         <div className="row">
           <div className="col-sm-3">
             <div className={s.title}>Conferences tracked</div>
-            <div className={s.body}><strong>{this.state.numberOfConfs}</strong></div>
+            <div className={s.pop}>{this.state.numberOfConfs}</div>
           </div>
           <div className="col-sm-3">
             <div className={s.title}>Best performer</div>
@@ -48,7 +48,7 @@ class Callouts extends React.Component {
           </div>
           <div className="col-sm-3" id={s.nbrConfAtParity}>
             <div className={s.title}>Number of confs >= 50%</div>
-            <div className={s.body}>{(this.state.confs.filter(diversityAtParityOrGreater)).length}</div>
+            <div className={s.pop}>{(this.state.confs.filter(diversityAtParityOrGreater)).length}</div>
           </div>
         </div>
       </div>
