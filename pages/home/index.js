@@ -3,6 +3,7 @@ import _ from 'underscore';
 import Layout   from '../../components/Layout';
 import ConfList from '../../components/ConfList';
 import Callouts from '../../components/Callouts';
+import Legend from '../../components/Legend';
 import s from './styles.css';
 import { title, html } from './index.md';
 import confs from './confs.json';
@@ -39,6 +40,8 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <Callouts confs={this.state.confs} />
         <ConfList confs={this.state.confs} />
+        <br/>
+        <Legend/>
 
       </Layout>
     );
