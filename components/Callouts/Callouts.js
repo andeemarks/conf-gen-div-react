@@ -31,13 +31,15 @@ class Callouts extends React.Component {
   constructor(props) {
     super(props);
 
+    this.currentYearConfs = props.confs.filter(confFromCurrentYear);
+
     this.state = {
       confs: props.confs,
       bestPerformer: props.confs.sort(diversitySorter)[0],
       numberOfConfs: props.confs.length,
       numberOfConfsAtParityOrGreater: props.confs.filter(diversityAtParityOrGreater).length,
       averageDiversity: props.confs.reduce(diversityAccumulator, 0) / props.confs.length,
-      averageDiversityCurrentYear: props.confs.filter(confFromCurrentYear).reduce(diversityAccumulator, 0) / props.confs.filter(confFromCurrentYear).length
+      averageDiversityCurrentYear: this.currentYearConfs.reduce(diversityAccumulator, 0) / this.currentYearConfs.length
     };
   }
 
