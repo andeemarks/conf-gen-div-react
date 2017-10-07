@@ -9,6 +9,15 @@
     "Notes":""
   },
   {
+    "name":"Compose Conference",
+    "location":"Melbourne, Australia",
+    "year":"2017",
+    "totalSpeakers":12,
+    "numberOfWomen":2,
+    "source":"http://www.composeconference.org/2017-melbourne/day-one-program/",
+    "Notes":""
+  },
+  {
     "name":"1st Conf",
     "location":"Melbourne, Australia",
     "year":"2017",
