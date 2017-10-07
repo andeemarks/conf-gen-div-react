@@ -55,18 +55,6 @@ function genderDiversityCellStyle(percentage, row, rowIndex, columnIndex) {
 
 }
 
-function yearFormatter(cell, row) {
-    var thisYear = new Date().getFullYear();
-    var yearDiff = thisYear - cell;
-    if (yearDiff == 0) {
-      return "this year";
-    } else if (yearDiff == 1) {
-      return "last year";
-    } else {
-      return yearDiff + " years ago";
-    }
-}
-
 class ConfList extends React.Component {
 
   constructor(props) {
@@ -95,8 +83,7 @@ class ConfList extends React.Component {
         containerClass={s.confTable}
         condensed bordered={ false }
         trClassName={ genderDiversityRowStyle }
-        tableStyle={ { border: "none" }}
-        >
+        tableStyle={ { border: "none" }} >
         <TableHeaderColumn
           isKey
           tdAttr={ { 'id': `${s.confTableRow}` } }
@@ -106,8 +93,7 @@ class ConfList extends React.Component {
           dataAlign='center'
           dataSort={ true }
           headerAlign='center'
-          width='50'
-          >f:m</TableHeaderColumn>
+          width='50'>f:m</TableHeaderColumn>
         <TableHeaderColumn
           dataField='name'
           tdAttr={ { 'id': `${s.confTableRow}` } }
@@ -134,10 +120,11 @@ class ConfList extends React.Component {
         <TableHeaderColumn
           dataField='year'
           tdAttr={ { 'id': `${s.confTableRow}` } }
-          dataFormat={ yearFormatter }
           dataSort={ true }
-          width='120'
-          >when</TableHeaderColumn>
+          headerAlign='right'
+          dataAlign='right'
+          width='60'
+          >year</TableHeaderColumn>
         <TableHeaderColumn
           dataField='location'
           tdAttr={ { 'id': `${s.confTableRow}` } }
