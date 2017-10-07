@@ -461,6 +461,15 @@
  {
     "name":"Web Directions Code",
     "location":"Melbourne, Australia",
+    "year":"2017",
+    "totalSpeakers":18,
+    "numberOfWomen":6,
+    "source":"http://www.webdirections.org/code17/",
+    "Notes":""
+  },
+ {
+    "name":"Web Directions Code",
+    "location":"Melbourne, Australia",
     "year":"2015",
     "totalSpeakers":20,
     "numberOfWomen":3,
