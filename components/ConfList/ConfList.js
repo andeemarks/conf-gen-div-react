@@ -55,6 +55,10 @@ function genderDiversityCellStyle(percentage, row, rowIndex, columnIndex) {
 
 }
 
+function rowIndexFormatter(cell, row, formatExtraData, rowIdx) {
+  return (rowIdx + 1);
+}
+
 class ConfList extends React.Component {
 
   constructor(props) {
@@ -84,6 +88,13 @@ class ConfList extends React.Component {
         condensed bordered={ false }
         trClassName={ genderDiversityRowStyle }
         tableStyle={ { border: "none" }} >
+        <TableHeaderColumn
+          tdAttr={ { 'id': `${s.confTableRow}` } }
+          dataField='diversityPercentage'
+          dataFormat={ rowIndexFormatter }
+          dataAlign='center'
+          headerAlign='center'
+          width='30'></TableHeaderColumn>
         <TableHeaderColumn
           isKey
           tdAttr={ { 'id': `${s.confTableRow}` } }
