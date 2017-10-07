@@ -99,7 +99,7 @@ class ConfList extends React.Component {
           tdAttr={ { 'id': `${s.confTableRow}` } }
           dataFormat={ whoFormatter }
           dataSort={ true }
-          width='250'
+          width='220'
           >who</TableHeaderColumn>
         <TableHeaderColumn
           dataField='numberOfWomen'
