@@ -476,6 +476,15 @@
     "source":"http://www.scaleconf.co.nz/",
     "Notes":"Not including lightning talks"
   },
+  {
+    "name":"ScaleConf",
+    "location":"Wellington, New Zealand",
+    "year":"2016",
+    "totalSpeakers":13,
+    "numberOfWomen":2,
+    "source":"http://www.scaleconf.co.nz/2016/",
+    "Notes":"Not including workshops"
+  },
  {
     "name":"Web Directions Code",
     "location":"Melbourne, Australia",
