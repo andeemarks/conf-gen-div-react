@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import _ from 'underscore';
 import Layout   from '../../components/Layout';
 import ConfList from '../../components/ConfList';
 import Callouts from '../../components/Callouts';
@@ -38,6 +39,7 @@ class HomePage extends React.Component {
         <div className={s.descriptionText} dangerouslySetInnerHTML={{ __html: html }} />
         <Callouts confs={this.state.confs} />
         <ConfList confs={this.state.confs} />
+
       </Layout>
     );
   }

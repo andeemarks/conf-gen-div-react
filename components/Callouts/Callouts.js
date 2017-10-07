@@ -1,7 +1,7 @@
 import s from './Callouts.css';
 import React, { PropTypes } from 'react';
 import numbro from 'numbro';
-
+import _ from 'underscore';
 
 function diversityAtParityOrGreater(conf) {
   return conf.diversityPercentage >= 50;
@@ -32,6 +32,7 @@ class Callouts extends React.Component {
     super(props);
 
     this.currentYearConfs = props.confs.filter(confFromCurrentYear);
+    this.confsByName = _.groupBy(props.confs, "name");
 
     this.state = {
       confs: props.confs,
