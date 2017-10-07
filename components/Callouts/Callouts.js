@@ -7,6 +7,10 @@ function diversityAtParityOrGreater(conf) {
   return conf.diversityPercentage >= 50;
 }
 
+function confFromCurrentYear(conf) {
+  return conf.year == (new Date()).getFullYear();
+}
+
 function diversityAccumulator(accumulator, conf) { 
   return accumulator + conf.diversityPercentage; 
 }
@@ -33,7 +37,7 @@ class Callouts extends React.Component {
       numberOfConfs: props.confs.length,
       numberOfConfsAtParityOrGreater: props.confs.filter(diversityAtParityOrGreater).length,
       averageDiversity: props.confs.reduce(diversityAccumulator, 0) / props.confs.length,
-      averageDiversityCurrentYear: props.confs.reduce(diversityAccumulator, 0) / props.confs.length
+      averageDiversityCurrentYear: props.confs.filter(confFromCurrentYear).reduce(diversityAccumulator, 0) / props.confs.filter(confFromCurrentYear).length
     };
   }
 
