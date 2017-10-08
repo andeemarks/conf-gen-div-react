@@ -1,7 +1,6 @@
 import s from './Callouts.css';
 import React, { PropTypes } from 'react';
 import numbro from 'numbro';
-import _ from 'underscore';
 
 function diversityAtParityOrGreater(conf) {
   return conf.diversityPercentage >= 50;

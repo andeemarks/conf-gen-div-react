@@ -6,6 +6,12 @@ function whoFormatter(cell, row) {
   return `${cell} (${row.year}) <a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a>`;
 }
 
+function historyFormatter(history, row) {
+  return history.reduce(function(accumulator, historyItem, currentIndex) {
+    return accumulator + genderDiversityFormatter(historyItem.diversityPercentage, "") + " (" + historyItem.year + ") ";
+  }, "");
+}
+
 function numberOfMenFormatter(cell, row) {
   return row.totalSpeakers - row.numberOfWomen;
 }
@@ -140,6 +146,11 @@ class ConfList extends React.Component {
           dataField='location'
           tdAttr={ { 'id': `${s.confTableRow}` } }
           >where</TableHeaderColumn>
+        <TableHeaderColumn
+          dataField='history'
+          dataFormat={ historyFormatter }
+          tdAttr={ { 'id': `${s.confTableRow}` } }
+          >history</TableHeaderColumn>
       </BootstrapTable>
     );
   }
