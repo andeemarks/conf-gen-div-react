@@ -28,11 +28,11 @@ function diversitySorter(confA, confB) {
 
 class Callouts extends React.Component {
 
+
   constructor(props) {
     super(props);
 
     this.currentYearConfs = props.confs.filter(confFromCurrentYear);
-    this.confsByName = _.groupBy(props.confs, "name");
 
     this.state = {
       confs: props.confs,

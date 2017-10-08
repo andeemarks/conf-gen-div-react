@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import _ from 'underscore';
 import Layout   from '../../components/Layout';
 import ConfList from '../../components/ConfList';
 import Callouts from '../../components/Callouts';
@@ -7,6 +6,15 @@ import Legend from '../../components/Legend';
 import s from './styles.css';
 import { title, html } from './index.md';
 import confs from './confs.json';
+import _ from 'underscore';
+
+function selectYearAndDiversity(conference, key) { 
+  return _.pick(conference, 'year', 'diversityPercentage'); 
+};
+
+function sortByYear(conferences, confName, list) {
+  return {name: confName, history: _.sortBy(_.map(conferences, selectYearAndDiversity), 'year')};
+};
 
 class HomePage extends React.Component {
 
@@ -31,7 +39,18 @@ class HomePage extends React.Component {
       confs[i]['diversityPercentage'] = confs[i].numberOfWomen / confs[i].totalSpeakers * 100
     }
 
-    return confs;
+    // add historical diversity for conference
+    this.confsByName = _.groupBy(confs, "name");
+    this.confsHistory = _.map(this.confsByName, sortByYear);
+
+    this.confsWithHistory = confs.map(function(currentConf, index, allConfs) {
+      return Object.assign(currentConf, {history: _.find(this.confsHistory, function(conf) {
+        return conf.name == currentConf.name;
+      }).history}
+    )}, this);
+
+    // console.log(this.confsWithHistory);
+    return this.confsWithHistory;
   }
 
   render() {
