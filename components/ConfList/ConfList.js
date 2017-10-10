@@ -10,8 +10,17 @@ function whoFormatter(cell, row) {
 function historyItemFormatter(historyItem) {
   return genderDiversityFormatter(historyItem.diversityPercentage, "") + " (" + historyItem.year + ")";  
 }
-function historyFormatter(history, row) {
-  return historyItemFormatter(_.first(history)) + " -> " + historyItemFormatter(_.last(history));
+
+function yearExtractor(historyItem) {
+  return historyItem.diversityPercentage;
+}
+
+function minDiversityFormatter(history, row) {
+  return historyItemFormatter(_.min(history, yearExtractor));
+}
+
+function maxDiversityFormatter(history, row) {
+  return historyItemFormatter(_.max(history, yearExtractor));
 }
 
 function numberOfMenFormatter(cell, row) {
@@ -150,9 +159,14 @@ class ConfList extends React.Component {
           >where</TableHeaderColumn>
         <TableHeaderColumn
           dataField='history'
-          dataFormat={ historyFormatter }
+          dataFormat={ minDiversityFormatter }
           tdAttr={ { 'id': `${s.confTableRow}` } }
-          >history</TableHeaderColumn>
+          >min</TableHeaderColumn>
+        <TableHeaderColumn
+          dataField='history'
+          dataFormat={ maxDiversityFormatter }
+          tdAttr={ { 'id': `${s.confTableRow}` } }
+          >max</TableHeaderColumn>
       </BootstrapTable>
     );
   }
