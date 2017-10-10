@@ -1,15 +1,17 @@
 import React, { PropTypes } from 'react';
-import s from './ConfList.css';
+import s from './ConfList.css'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import _ from 'underscore';
 
 function whoFormatter(cell, row) {
   return `${cell} (${row.year}) <a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a>`;
 }
 
+function historyItemFormatter(historyItem) {
+  return genderDiversityFormatter(historyItem.diversityPercentage, "") + " (" + historyItem.year + ")";  
+}
 function historyFormatter(history, row) {
-  return history.reduce(function(accumulator, historyItem, currentIndex) {
-    return accumulator + genderDiversityFormatter(historyItem.diversityPercentage, "") + " (" + historyItem.year + ") ";
-  }, "");
+  return historyItemFormatter(_.first(history)) + " -> " + historyItemFormatter(_.last(history));
 }
 
 function numberOfMenFormatter(cell, row) {
