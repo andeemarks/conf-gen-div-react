@@ -2,13 +2,14 @@ import React, { PropTypes } from 'react';
 import s from './ConfList.css'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import _ from 'underscore';
+import { Sparklines, SparklinesLine, SparklinesSpots, SparklinesReferenceLine } from 'react-sparklines';
 
 function whoFormatter(cell, row) {
   return `${cell} (${row.year}) <a href='${row.source}' target='_other'><span style='font-size: 10px' class='glyphicon glyphicon-link'></span></a>`;
 }
 
 function historyItemFormatter(historyItem) {
-  return genderDiversityFormatter(historyItem.diversityPercentage, "") + " (" + historyItem.year + ")";  
+  return genderDiversityFormatter(historyItem.diversityPercentage, "") + " <sup>(" + historyItem.year + ")</sup>";  
 }
 
 function yearExtractor(historyItem) {
@@ -30,7 +31,7 @@ function numberOfMenFormatter(cell, row) {
 function genderDiversityFormatter(cell, row) {
   var formatter = new Intl.NumberFormat('en-US', {
     style: 'decimal',
-    minimumIntegerDigits: 1,
+    minimumIntegerDigits: 2,
     maximumIntegerDigits: 2,
     maximumFractionDigits: 0,
   });
@@ -160,6 +161,8 @@ class ConfList extends React.Component {
         <TableHeaderColumn
           dataField='history'
           dataFormat={ minDiversityFormatter }
+          headerAlign='right'
+          dataAlign='right'
           tdAttr={ { 'id': `${s.confTableRow}` } }
           >min</TableHeaderColumn>
         <TableHeaderColumn
